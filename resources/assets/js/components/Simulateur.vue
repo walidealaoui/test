@@ -231,22 +231,21 @@ const items = [
             sliderUpdateValue(alloctionNewValue) 
             {
                 console.log(alloctionNewValue)
-              // this.alloc=alloctionNewValue
-                //return alloctionNewValue
+            
 
             },
         
            onSubmit(){
                      this.$validator.validateAll().then((result) => {
                             if (result) {
-                           this.mt=this.montant;
-                          this.showSelectedFonds=true;
-                         this.simulateurBoolean=false;
-                          this.fondsSelected=this.checkedItems;
+                        this.mt=this.montant;
+                        this.showSelectedFonds=true;
+                        this.simulateurBoolean=false;
+                        this.fondsSelected=this.checkedItems;
                            for(var i=0;i<this.checkedItems.length;i++)
                            {
                               this.allocations[this.fondsSelected[i].id_fond] = 0;
-                          }
+                           }
                             
                             }else{console.log('eror');
                                  }
@@ -305,13 +304,14 @@ const items = [
 
                         return montant * percent/100;
                     }
+                    
             
                    
                 },
         
         
         
-        
+         
         created()
                 {
                     this.fetchFonds();
@@ -322,7 +322,8 @@ const items = [
                     console.log('Component mounted.')
                 },
                 
-                computed:{
+                computed:
+                {
                     sortedFonds:function() {
                         return this.fonds.sort((a,b) => {
                         let modifier = 1;
@@ -332,7 +333,9 @@ const items = [
                         return 0;
                         });
                         }
-                       },
+                 },
+
+
 
         components: {
             SimulatorItem
